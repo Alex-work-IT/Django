@@ -1,0 +1,17 @@
+{% extends 'news/layout.html' %}
+
+{% block title %} {{title}} {% endblock %} 
+
+{% block content %}
+<div class="content">
+  <div class="title">Добавление статьи</div>
+  <form method="POST">
+    {% csrf_token %}
+    {{form.title}}<br>
+    {{form.content}}<br>
+    <button type="submit" class="form__button"> Add article </button>
+    <span>{{ error }}</span>
+  </form>
+</div>
+</div>
+{% endblock %}

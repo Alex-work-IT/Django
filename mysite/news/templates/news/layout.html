@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static '/css/style.css' %}" />
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header__logo">Time News</div>
+      <div class="header__about">
+        <a href="{% url 'home' %}" class="header__nav">Home</a>
+        <a href="{% url 'create' %}" class="header__nav">Create</a>
+        <a href="{% url 'admin' %}" class="header__nav">Admin</a>
+      </div>
+    </div>
+    {% block content %} {% endblock %}
+  </body>
+</html>
