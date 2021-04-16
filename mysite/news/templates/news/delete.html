@@ -1,0 +1,12 @@
+{% extends 'news/layout.html' %} {% block title %} Delete article {% endblock %}
+{% block content %}
+
+<div class="content">
+  <div class="title">Delete article</div>
+  <form method="POST">
+    {% csrf_token %} {{form.id}}<br />
+    <button type="submit" class="form__button">Delete article</button>
+  </form>
+</div>
+
+{% endblock %}

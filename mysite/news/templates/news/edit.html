@@ -1,0 +1,33 @@
+{% extends 'news/layout.html' %}
+
+ {% block title %} Редактирование {% endblock %}
+
+{% block content %}
+
+<div class="content">
+  <div class="title">Редактирование статьи</div>
+  <form method="POST">
+    {% csrf_token %}
+  <div class="item">
+    <div class="item__category">Категория: {{news.category}}</div>
+    <div class="item__content">
+      <p>
+        <label>Заголовок</label><br>
+        <input type="text" name="title" value="{{news.title}}" class="edit-title" />
+      </p>
+      <p>
+        <label>Текст статьи</label><br>
+        <textarea type="text" name="content" class="edit-text" >{{news.content}}</textarea>
+      </p>
+  </div>
+  <div class="item__date">
+    {{news.created_at|date:"Y-m-d H:i"}}
+    <div class="item__options">
+    <button type="submit" class="form__button"> Save </button>
+  </div>
+  </div>
+  </div>
+</form>
+</div>
+
+{% endblock %}

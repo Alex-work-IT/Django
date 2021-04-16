@@ -51,9 +51,6 @@ body {
 .item__close {
   text-decoration: none;
   color: #000;
-  position: absolute;
-  top: 4px;
-  right: 4px;
   font-weight: 600;
   font-size: 18px;
   width: 16px;

@@ -11,10 +11,16 @@
     <div class="item__category">Категория: {{item.category}}</div>
     <div class="item__content">
     <div class="item__title">{{item.title}}</div>
-    <div class="item__text">{{item.content}}</div>
-    <button type="submit" class="form__button">Reed more...</button>
+    <div class="item__text">{{item.content|linebreaks}}</div>
+    <!-- <button type="submit" class="form__button">Reed more...</button> -->
   </div>
-  <div class="item__date">{{item.created_at|date:"Y-m-d H:i"}}</div>
+  <div class="item__date">
+    {{item.created_at|date:"Y-m-d H:i"}}
+    <div class="item__options">
+    <a href="edit/{{item.id}}" class="item__close"> Edit</a>
+    <a href="delete/{{item.id}}" class="item__close"> Delete</a>
+  </div>
+  </div>
   </div>
   {% endfor %}
 </div>
